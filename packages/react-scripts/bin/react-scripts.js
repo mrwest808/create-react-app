@@ -17,6 +17,13 @@ const scriptIndex = args.findIndex(
 const script = scriptIndex === -1 ? args[0] : args[scriptIndex];
 const nodeArgs = scriptIndex > 0 ? args.slice(0, scriptIndex) : [];
 
+// Set PREPEND_CSS_CLASS before including ../config/env.js
+if (args.indexOf('--prepend-css') > -1) {
+  const paths = require('../config/paths');
+  const pkg = require(paths.appPackageJson);
+  process.env.PREPEND_CSS_CLASS = pkg.name;
+}
+
 switch (script) {
   case 'build':
   case 'eject':

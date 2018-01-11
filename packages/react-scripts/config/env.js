@@ -77,6 +77,9 @@ function getClientEnvironment(publicUrl) {
         return env;
       },
       {
+        // Used for nesting all produced CSS inside a parent class, adding
+        // the class to the root element and prepending it to all CSS selectors.
+        PREPEND_CSS_CLASS: process.env.PREPEND_CSS_CLASS || '',
         // Useful for determining whether we’re running in production mode.
         // Most importantly, it switches React into the correct mode.
         NODE_ENV: process.env.NODE_ENV || 'development',

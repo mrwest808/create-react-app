@@ -181,6 +181,9 @@ module.exports = function(
     );
   }
   console.log();
+  console.log(chalk.yellow('Built using a custom react-scripts version'));
+  console.log(chalk.yellow('@mrwest808/react-scripts'));
+  console.log();
   console.log('Happy hacking!');
 };
 
